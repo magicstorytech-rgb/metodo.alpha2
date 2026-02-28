@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Protocolo del Hercules - Teste Gratuito</title>
+    <title>Alpha Method - Teste Gratuito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #ef4444; --bg: #050505; --card: #111111; --text: #ffffff; --green: #22c55e; }
@@ -21,7 +21,10 @@
         
         .badge { display: inline-block; background: rgba(239, 68, 68, 0.15); border: 1px solid var(--primary); color: var(--primary); padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
         
-        .headline { font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 15px; line-height: 1.2; }
+        .headline { font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 15px; line-height: 1.3; }
+        .headline .destaque { color: var(--primary); display: inline; }
+        .headline .numero { font-size: 1.3em; color: var(--green); text-shadow: 0 0 20px rgba(34,197,94,0.5); letter-spacing: -1px; }
+        .headline .separador { display: block; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); margin: 10px auto; width: 60%; border-radius: 2px; }
         
         .subheadline { font-size: 15px; color: #999; margin-bottom: 25px; line-height: 1.4; }
         
@@ -118,8 +121,15 @@
         <div id="screen-1" class="screen active">
             <div class="card">
                 <div class="badge" style="display: block; text-align: center;">⚡ MÉTODO VALIDADO POR +50 MIL HOMENS</div>
-                <h1 class="headline" style="text-align: center;">Descubra Quantos CM Você Pode Aumentar em 30 Dias</h1>
-                <p class="subheadline" style="text-align: center;">Teste rápido baseado em ciência. 100% confidencial.</p>
+                <h1 class="headline" style="text-align: center;">
+    Seu cajado pode crescer<br>
+    <span class="numero">até 7cm</span>
+    <span class="separador"></span>
+    <span style="font-size: 0.65em; font-weight: 700; color: #ccc; letter-spacing: 0.5px;">
+        100% natural &nbsp;·&nbsp; possível em 30 dias
+    </span>
+</h1>
+                <p class="subheadline" style="text-align: center;">Você foi enganado: o problema não é o que você tem, mas o que seu corpo bloqueou. Não é genética. Não é idade. É compressão estrutural, causada por estresse, hábitos e alimentação.</p>
                 <div class="stats-row">
                     <div class="stat-box"><div class="stat-number">50K+</div><div class="stat-label">Homens</div></div>
                     <div class="stat-box"><div class="stat-number">4.9★</div><div class="stat-label">Avaliação</div></div>
@@ -127,7 +137,7 @@
                 </div>
                 <div class="privacy-note">🔒 TOTALMENTE CONFIDENCIAL - Suas respostas são 100% anônimas</div>
                 <div class="urgency-box">🔥 1.247 homens fizeram este teste nas últimas 24 horas</div>
-                <button class="btn" onclick="startQuiz()">⚡ DESCOBRIR MEU POTENCIAL AGORA</button>
+                <button class="btn" onclick="startQuiz()">⚡ REVELAR MEU POTENCIAL</button>
             </div>
         </div>
 
@@ -397,6 +407,31 @@
             localStorage.setItem('hercules_sid', sid);
         }
 
+        // ── TRACKING AUTOMÁTICO POR DOMÍNIO ──────────────────────────
+        const DOMAIN_CHANNEL_MAP = {
+            'method-alpha.vercel.app':   'cajado-supremo',
+            'metodo-alpha.vercel.app':   'doutor-cajado',
+            'metodo-alpha2.vercel.app':  'doutor-saude',
+            'method-alpha1.vercel.app':  'doutor-reginaldo',
+            'alpha-method.vercel.app':   'doutor-bigode'
+        };
+        const CHANNEL_NAMES = {
+            'cajado-supremo':    '📱 Cajado Supremo',
+            'doutor-cajado':     '📱 Doutor Cajado',
+            'doutor-saude':      '📱 Doutor Saúde',
+            'doutor-reginaldo':  '📱 Doutor Reginaldo',
+            'doutor-bigode':     '📱 Doutor Bigode'
+        };
+        function detectChannel() {
+            const hostname = window.location.hostname;
+            const channel = DOMAIN_CHANNEL_MAP[hostname] || 'desconhecido';
+            localStorage.setItem('tiktok_channel', channel);
+            sessionStorage.setItem('tiktok_channel', channel);
+            document.cookie = `tiktok_channel=${channel}; max-age=86400; path=/`;
+            return channel;
+        }
+        const currentChannel = detectChannel();
+
         // ── NOVAS PERGUNTAS ───────────────────────────────────────────
         const QUESTIONS = [
             {
@@ -617,10 +652,13 @@
         }
 
         window.checkout = function() {
-            track('checkout', { currentStep: 'checkout' });
+            const ch = localStorage.getItem('tiktok_channel') || sessionStorage.getItem('tiktok_channel') || currentChannel;
+            track('checkout', { currentStep: 'checkout', channel: ch });
             setDoc(doc(db, 'sessions', sid), {
                 'events.checkout': serverTimestamp(),
                 currentStep: 'checkout',
+                channel: ch,
+                channelName: CHANNEL_NAMES[ch] || ch,
                 lastActivity: serverTimestamp()
             }, { merge: true });
             setTimeout(() => {
@@ -642,6 +680,9 @@
                     lastActivity: serverTimestamp(),
                     currentStep: 'hook',
                     source: 'hercules_funil',
+                    channel: currentChannel,
+                    channelName: CHANNEL_NAMES[currentChannel] || currentChannel,
+                    domain: window.location.hostname,
                     quizProgress: 0,
                     'events.page_view': serverTimestamp(),
                     answers: {}
