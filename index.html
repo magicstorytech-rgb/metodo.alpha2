@@ -9,63 +9,45 @@
         :root { --primary: #ef4444; --bg: #050505; --card: #111111; --text: #ffffff; --green: #22c55e; }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
-        
         .container { width: 100%; max-width: 500px; }
-        
         .screen { display: none; }
         .screen.active { display: block; animation: fadeIn 0.3s; }
-        
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
         .card { background: var(--card); border: 1px solid #262626; border-radius: 20px; padding: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        
         .badge { display: inline-block; background: rgba(239, 68, 68, 0.15); border: 1px solid var(--primary); color: var(--primary); padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-        
         .headline { font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 15px; line-height: 1.3; }
         .headline .destaque { color: var(--primary); display: inline; }
         .headline .numero { font-size: 1.3em; color: var(--green); text-shadow: 0 0 20px rgba(34,197,94,0.5); letter-spacing: -1px; }
         .headline .separador { display: block; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); margin: 10px auto; width: 60%; border-radius: 2px; }
-        
         .subheadline { font-size: 15px; color: #999; margin-bottom: 25px; line-height: 1.4; }
-        
         .stats-row { display: flex; gap: 10px; margin-bottom: 25px; }
         .stat-box { flex: 1; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); padding: 12px; border-radius: 10px; text-align: center; }
         .stat-number { font-size: 18px; font-weight: 900; color: var(--green); }
         .stat-label { font-size: 10px; color: #999; text-transform: uppercase; margin-top: 4px; }
-        
         .urgency-box { background: rgba(239, 68, 68, 0.15); border: 1px solid var(--primary); padding: 12px; border-radius: 10px; text-align: center; margin-bottom: 20px; font-size: 13px; font-weight: 700; color: var(--primary); }
-        
         .btn { background: var(--primary); color: white; border: none; padding: 20px; border-radius: 14px; font-weight: 900; cursor: pointer; width: 100%; font-size: 18px; text-transform: uppercase; transition: all 0.3s; box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3); }
         .btn:hover { transform: scale(1.02); }
-        
         .progress-bar-container { margin-bottom: 25px; }
         .progress-text { font-size: 12px; font-weight: 900; color: var(--primary); margin-bottom: 8px; text-align: right; }
         .progress-bar { height: 6px; background: #262626; border-radius: 10px; overflow: hidden; }
         .progress-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s ease; }
-        
         .question { font-size: 20px; font-weight: 900; margin-bottom: 20px; line-height: 1.3; }
-        
         .privacy-note { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); padding: 12px; border-radius: 10px; margin-bottom: 20px; font-size: 12px; text-align: center; color: var(--green); font-weight: 700; }
-        
         .options { display: grid; gap: 12px; }
         .option-btn { background: rgba(255, 255, 255, 0.05); border: 2px solid #262626; color: var(--text); padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; transition: all 0.2s; font-size: 15px; text-align: left; }
         .option-btn:hover { border-color: var(--primary); background: rgba(239, 68, 68, 0.1); transform: translateX(5px); }
-        
         .cm-input-box { background: rgba(34, 197, 94, 0.1); border: 2px solid var(--green); padding: 25px; border-radius: 16px; margin: 25px 0; text-align: center; }
         .cm-input { width: 100%; max-width: 200px; background: rgba(0, 0, 0, 0.5); border: 2px solid #262626; color: #fff; font-size: 32px; font-weight: 900; text-align: center; padding: 15px; border-radius: 12px; margin: 15px 0; }
         .cm-input:focus { outline: none; border-color: var(--green); }
         .cm-label { font-size: 14px; color: #ccc; margin-top: 10px; }
-        
         .analysis-bar { margin-bottom: 20px; background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 12px; border: 1px solid #262626; }
         .analysis-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; font-weight: 800; }
         .bar-container { height: 14px; background: #1a1a1a; border-radius: 8px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); }
         .bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary) 0%, #ff6666 100%); width: 0%; transition: width 0.5s ease; box-shadow: 0 0 10px rgba(239, 68, 68, 0.5); }
         .bar-fill.complete { background: linear-gradient(90deg, var(--green) 0%, #4ade80 100%); box-shadow: 0 0 15px rgba(34, 197, 94, 0.6); }
-        
         .analysis-header { text-align: center; margin-bottom: 30px; }
         .analysis-icon { font-size: 64px; margin-bottom: 15px; animation: float 3s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-
         .testimonials-analysis-carousel { position: relative; overflow: hidden; margin: 25px 0; border-radius: 12px; }
         .testimonials-track { display: flex; transition: transform 0.5s ease; }
         .testimonial-card { min-width: 100%; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 12px; padding: 15px; box-sizing: border-box; }
@@ -79,7 +61,6 @@
         .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
         .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: #333; border: none; cursor: pointer; transition: background 0.3s; padding: 0; }
         .carousel-dot.active { background: var(--green); }
-        
         .result-box { background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.05) 100%); border: 2px solid var(--green); padding: 25px; border-radius: 16px; margin: 25px 0; text-align: center; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); } 50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); } }
         .result-number { font-size: 56px; font-weight: 900; color: var(--green); margin: 15px 0; text-shadow: 0 0 30px rgba(34, 197, 94, 0.6); }
@@ -89,292 +70,246 @@
         .result-row:last-child { margin-bottom: 0; }
         .result-row-label { font-size: 14px; color: #999; }
         .result-row-value { font-size: 20px; font-weight: 900; color: var(--green); }
-
         .plan-header { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(239,68,68,0.05)); border: 2px solid var(--primary); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 25px; }
         .plan-tag { font-size: 11px; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
         .plan-name { font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 6px; }
         .plan-sub { font-size: 13px; color: #999; }
-
         .benefit { display: flex; align-items: flex-start; margin-bottom: 13px; font-size: 14px; font-weight: 700; line-height: 1.4; color: #fff; }
         .benefit span { color: var(--green); margin-right: 10px; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-
         .guarantee-box { background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(34,197,94,0.05)); border: 2px solid var(--green); padding: 18px; border-radius: 14px; text-align: center; margin: 20px 0; }
         .guarantee-icon { font-size: 36px; margin-bottom: 8px; }
         .guarantee-title { font-size: 15px; font-weight: 900; color: var(--green); margin-bottom: 5px; }
         .guarantee-desc { font-size: 12px; color: #999; line-height: 1.4; }
-
         .testimonials-carousel { position: relative; height: 60px; overflow: hidden; margin: 20px 0; }
         .testimonial-slide { position: absolute; width: 100%; text-align: center; opacity: 0; transition: opacity 0.8s ease; padding: 12px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; }
         .testimonial-slide.active { opacity: 1; }
         .testimonial-quote { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
         .testimonial-author { font-size: 12px; color: #999; }
-        
         .security-footer { font-size: 11px; margin-top: 15px; color: #999; font-weight: 700; text-align: center; }
+
+        /* ── TELA 0 ── */
+        .tela0-skip { background: none; border: none; color: #555; font-size: 12px; cursor: pointer; text-decoration: underline; padding: 14px; display: block; margin: 0 auto; }
+        .tela0-skip:hover { color: #888; }
+        .countdown-box { background: rgba(239,68,68,0.15); border: 1px solid var(--primary); padding: 14px; border-radius: 10px; text-align: center; margin-bottom: 20px; font-size: 13px; font-weight: 700; color: var(--primary); }
+        .countdown-time { font-size: 28px; font-weight: 900; display: block; margin-top: 4px; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-    <div class="container">
+  <div class="container">
 
-        <!-- TELA 1: GANCHO -->
-        <div id="screen-1" class="screen active">
-            <div class="card">
-                <div class="badge" style="display: block; text-align: center;">⚡ MÉTODO VALIDADO POR +50 MIL HOMENS</div>
-                <h1 class="headline" style="text-align: center;">
-                    Seu cajado pode crescer<br>
-                    <span class="numero">até 7cm</span>
-                    <span class="separador"></span>
-                    <span style="font-size: 0.65em; font-weight: 700; color: #ccc; letter-spacing: 0.5px;">
-                        100% natural &nbsp;·&nbsp; possível em 30 dias
-                    </span>
-                </h1>
-                <p class="subheadline" style="text-align: center;">Você foi enganado: o problema não é o que você tem, mas o que seu corpo bloqueou. Não é genética. Não é idade. É compressão estrutural, causada por estresse, hábitos e alimentação.</p>
-                <div class="stats-row">
-                    <div class="stat-box"><div class="stat-number">50K+</div><div class="stat-label">Homens</div></div>
-                    <div class="stat-box"><div class="stat-number">4.9★</div><div class="stat-label">Avaliação</div></div>
-                    <div class="stat-box"><div class="stat-number">94%</div><div class="stat-label">Aprovam</div></div>
-                </div>
-                <div class="privacy-note">🔒 TOTALMENTE CONFIDENCIAL - Suas respostas são 100% anônimas</div>
-                <div class="urgency-box">🔥 1.247 homens fizeram este teste nas últimas 24 horas</div>
-                <button class="btn" onclick="startQuiz()">⚡ REVELAR MEU POTENCIAL</button>
+    <!-- TELA 0: instrução abrir no navegador -->
+    <div id="screen-0" class="screen">
+        <div class="card" style="text-align:center;">
+
+            <!-- Faixa topo -->
+            <div style="background: linear-gradient(90deg, #ef4444, #dc2626); border-radius: 10px; padding: 10px 16px; margin-bottom: 16px;">
+                <span style="font-size: 13px; font-weight: 900; color: #fff; letter-spacing: 0.5px;">
+                    🔥 OFERTA EXCLUSIVA · APENAS HOJE
+                </span>
             </div>
-        </div>
 
-        <!-- TELA 2: QUIZ (8 PERGUNTAS) -->
-        <div id="screen-2" class="screen">
-            <div class="card">
-                <div class="badge">🔒 100% CONFIDENCIAL</div>
-                <div class="progress-bar-container">
-                    <div class="progress-text" id="progress-text">13% COMPLETO</div>
-                    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <!-- Headline -->
+            <h1 class="headline" style="text-align:center; font-size:22px; margin-bottom:6px;">
+                Espera! Você tem um<br>
+                <span style="color: var(--green); font-size: 1.25em; text-shadow: 0 0 20px rgba(34,197,94,0.5);">
+                    DESCONTO DE 40%
+                </span><br>
+                <span style="font-size: 0.65em; color: #ccc; font-weight: 700;">reservado para você agora</span>
+            </h1>
+
+            <!-- Instrução com imagem -->
+            <div style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.4); border-radius: 12px; padding: 14px; margin-bottom: 14px;">
+                <div style="font-size: 14px; font-weight: 900; color: #fff; margin-bottom: 10px;">
+                    📲 Siga os passos para garantir o desconto:
                 </div>
-                <div id="quiz-content"></div>
+                <img
+                    src="https://i.im.ge/2026/02/06/e0jl7p.WhatsApp-Image-2026-02-02-at-09-17-58-2-1-2.jpeg"
+                    alt="Como abrir no navegador"
+                    style="width:100%; max-width:360px; border-radius:10px; display:block; margin: 0 auto;"
+                />
             </div>
-        </div>
 
-        <!-- TELA 3: PERGUNTA TAMANHO ATUAL -->
-        <div id="screen-3" class="screen">
-            <div class="card">
-                <div class="badge">📏 MEDIÇÃO PERSONALIZADA</div>
-                <h2 class="headline" style="text-align: center;">Qual o tamanho atual do seu cajado ERETO?</h2>
-                <p style="text-align: center; color: #999; font-size: 14px; margin-bottom: 25px;">Seja honesto para calcularmos seu potencial REAL de crescimento</p>
-                <div class="cm-input-box">
-                    <div style="font-size: 16px; font-weight: 900; color: var(--green); margin-bottom: 10px;">SEU TAMANHO ATUAL (ERETO)</div>
-                    <input type="number" id="current-size" class="cm-input" placeholder="15" min="5" max="30" step="0.5">
-                    <div class="cm-label">centímetros</div>
-                </div>
-                <div class="privacy-note">🔒 Essas informações são 100% confidenciais e usadas apenas para calcular seu resultado</div>
-                <button class="btn" onclick="calculateResult()">📊 CALCULAR MEU POTENCIAL</button>
+            <!-- Countdown -->
+            <div class="countdown-box">
+                ⏱️ Desconto reservado por:
+                <span class="countdown-time" id="countdown-timer">10:00</span>
             </div>
-        </div>
 
-        <!-- TELA 4: ANÁLISE + DEPOIMENTOS -->
-        <div id="screen-4" class="screen">
-            <div class="card">
-                <div class="badge">🔬 ANÁLISE CIENTÍFICA</div>
-                <div class="analysis-header">
-                    <div class="analysis-icon">🧬</div>
-                    <h2 class="headline" style="margin: 0;">Processando Seus Dados...</h2>
-                    <p style="color: #999; font-size: 13px; margin-top: 8px;">Analisando compatibilidade com o protocolo</p>
-                </div>
-                <div class="analysis-bar">
-                    <div class="analysis-label">
-                        <span>🩸 Fluxo Sanguíneo Cavernoso</span>
-                        <span id="status-1" style="color: var(--primary);">⏳ Analisando</span>
-                    </div>
-                    <div class="bar-container"><div class="bar-fill" id="bar-1"></div></div>
-                </div>
-                <div class="analysis-bar">
-                    <div class="analysis-label">
-                        <span>💪 Densidade Tecidual</span>
-                        <span id="status-2" style="color: #666;">⏳ Aguardando</span>
-                    </div>
-                    <div class="bar-container"><div class="bar-fill" id="bar-2"></div></div>
-                </div>
-                <div class="analysis-bar">
-                    <div class="analysis-label">
-                        <span>🎯 Compatibilidade Protocolo</span>
-                        <span id="status-3" style="color: #666;">⏳ Aguardando</span>
-                    </div>
-                    <div class="bar-container"><div class="bar-fill" id="bar-3"></div></div>
-                </div>
+            <p style="color:#aaa; font-size:13px; margin-bottom:10px; line-height:1.6;">
+                Ao abrir no navegador, seu <strong style="color:#22c55e;">desconto de 40%</strong> será aplicado automaticamente.
+            </p>
 
-                <div class="testimonials-analysis-carousel">
-                    <div class="testimonials-track" id="testimonials-track">
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">GM</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Gabriel Mota</div>
-                                    <div class="testimonial-age">22 anos • São Paulo</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Comecei novo e já queria melhorar. Em 5 semanas cresci 3cm e minha confiança foi lá pra cima. Recomendo pra qualquer idade!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +3cm em 21 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">RC</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Ricardo Costa</div>
-                                    <div class="testimonial-age">42 anos • São Paulo</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Aos 42 achei que era tarde demais. Em menos de um mês ganhei 4cm e a firmeza voltou! Minha esposa notou logo na primeira semana."</div>
-                            <div class="testimonial-result">✓ RESULTADO: +4cm em 28 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">LO</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Lucas Oliveira</div>
-                                    <div class="testimonial-age">25 anos • Curitiba</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Tinha vergonha na academia e na cama. Cresci 3,5cm em menos de 30 dias e agora tenho outra postura. Método incrível!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +3.5cm em 25 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">MS</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Marcelo Silva</div>
-                                    <div class="testimonial-age">38 anos • Rio de Janeiro</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Depois dos 35 começou a diminuir. Esse método me devolveu não só o tamanho, mas a confiança. Cresci 4cm em menos de um mês!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +4cm em 30 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">VR</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Vinícius Rocha</div>
-                                    <div class="testimonial-age">19 anos • Fortaleza</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Achei que jovem não precisava, mas queria ir além. Cresci 3cm e minha resistência dobrou. Resultado em menos de 3 semanas!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +3cm em 18 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">AF</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">André Ferreira</div>
-                                    <div class="testimonial-age">47 anos • Minas Gerais</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Com quase 50 anos, funcionou! Tinha 14cm, hoje tenho 17cm. Melhor: zero remédios, 100% natural. Resultado dentro do mês!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +3cm em 27 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">TN</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Thiago Nunes</div>
-                                    <div class="testimonial-age">27 anos • Porto Alegre</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Minha namorada já reclamava do tempo. Com o método cresci 3,5cm e duro 3x mais. Ela notou a diferença logo na segunda semana!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +3.5cm em 22 dias</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">PS</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Paulo Santos</div>
-                                    <div class="testimonial-age">44 anos • Bahia</div>
-                                </div>
-                            </div>
-                            <div class="testimonial-text">"Queria recuperar a confiança. Cresci 4cm e agora controlo quando quero. Resultado em menos de um mês, sem remédio nenhum!"</div>
-                            <div class="testimonial-result">✓ RESULTADO: +4cm em 29 dias</div>
-                        </div>
-                    </div>
-                    <div class="carousel-dots" id="carousel-dots">
-                        <button class="carousel-dot active" onclick="goToSlide(0)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(1)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(2)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(3)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(4)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(5)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(6)"></button>
-                        <button class="carousel-dot" onclick="goToSlide(7)"></button>
-                    </div>
-                </div>
-
-                <div id="result-container" style="display:none;">
-                    <div class="result-box">
-                        <div class="result-label">🎉 SEU RESULTADO PERSONALIZADO:</div>
-                        <div class="result-number" id="final-size">18cm</div>
-                        <div class="result-label">Tamanho que você pode atingir</div>
-                    </div>
-                    <div class="result-detail">
-                        <div class="result-row">
-                            <div class="result-row-label">Tamanho Atual:</div>
-                            <div class="result-row-value" id="current-size-display">15cm</div>
-                        </div>
-                        <div class="result-row">
-                            <div class="result-row-label">Crescimento Potencial:</div>
-                            <div class="result-row-value" id="growth-display">+3cm</div>
-                        </div>
-                        <div class="result-row">
-                            <div class="result-row-label">Novo Tamanho:</div>
-                            <div class="result-row-value" id="new-size-display" style="font-size: 28px;">18cm</div>
-                        </div>
-                    </div>
-                    <p style="text-align: center; color: #ccc; font-size: 14px; margin-bottom: 20px;">
-                        Baseado no seu perfil, você tem <strong style="color: var(--green);">ALTA compatibilidade</strong> com o método!
-                    </p>
-                    <button class="btn" onclick="goToOffer()">🚀 QUERO ALCANÇAR ESSE TAMANHO</button>
-                </div>
+            <!-- Botão skip -->
+            <div style="border-top: 1px solid #222; padding-top: 12px; margin-top: 4px;">
+                <button
+                    class="tela0-skip"
+                    onclick="skipToFunil()"
+                    style="color:#777; font-size:12px; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 10px 20px;"
+                >
+                    Não quero o desconto, continuar sem →
+                </button>
             </div>
-        </div>
 
-        <!-- TELA 5: OFERTA -->
-        <div id="screen-5" class="screen">
-            <div class="card">
-                <div class="plan-header">
-                    <div class="plan-tag">🏆 Acesso Completo ao Método</div>
-                    <div class="plan-name">Plano Premium</div>
-                    <div class="plan-sub">Protocolo Completo + Acesso Premium</div>
-                </div>
-                <div style="margin-bottom: 25px;">
-                    <div class="benefit"><span>✓</span> Método de excelência: do básico ao avançado</div>
-                    <div class="benefit"><span>✓</span> Manuais exclusivos (iniciante e avançado)</div>
-                    <div class="benefit"><span>✓</span> Vídeo Aulas detalhadas para aplicação imediata</div>
-                    <div class="benefit"><span>✓</span> Foco em crescimento, espessura e performance</div>
-                    <div class="benefit"><span>✓</span> Suporte 24h + Comunidade VIP</div>
-                    <div class="benefit"><span>🎁</span> Bônus Especial: Guia da Atração</div>
-                    <div class="benefit"><span>♾️</span> Acesso Vitalício (sem mensalidades)</div>
-                </div>
-                <div class="guarantee-box">
-                    <div class="guarantee-icon">🛡️</div>
-                    <div class="guarantee-title">Garantia de 7 Dias — Risco Zero</div>
-                    <div class="guarantee-desc">Não ficou satisfeito? Devolvemos 100% do seu dinheiro.<br>Sem perguntas, sem burocracia.</div>
-                </div>
-                <button class="btn" onclick="checkout()" style="font-size: 19px; padding: 22px; margin-bottom: 15px;">🔒 GARANTIR MEU ACESSO AGORA</button>
-                <div class="testimonials-carousel" id="testimonials">
-                    <div class="testimonial-slide active">
-                        <div class="testimonial-quote">💬 "Aumentei 3cm em 6 semanas. Melhor investimento!"</div>
-                        <div class="testimonial-author">@marcos_sp, 27 anos</div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-quote">💬 "Minha namorada percebeu a diferença nas primeiras semanas 🔥"</div>
-                        <div class="testimonial-author">@carlos_rj, 31 anos</div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-quote">💬 "Tinha 13cm, hoje tenho 16cm. Mudou minha vida!"</div>
-                        <div class="testimonial-author">@pedro_mg, 25 anos</div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-quote">💬 "Agora duro quanto EU quero. Controle total!"</div>
-                        <div class="testimonial-author">@lucas_ba, 29 anos</div>
-                    </div>
-                </div>
-                <div class="security-footer">🔒 Pagamento 100% seguro e discreto</div>
-            </div>
         </div>
-
     </div>
+
+    <!-- TELA 1: GANCHO -->
+    <div id="screen-1" class="screen">
+        <div class="card">
+            <div class="badge" style="display: block; text-align: center;">⚡ MÉTODO VALIDADO POR +50 MIL HOMENS</div>
+            <h1 class="headline" style="text-align: center;">
+                Seu cajado pode crescer<br>
+                <span class="numero">até 7cm</span>
+                <span class="separador"></span>
+                <span style="font-size: 0.65em; font-weight: 700; color: #ccc; letter-spacing: 0.5px;">
+                    100% natural &nbsp;·&nbsp; possível em 30 dias
+                </span>
+            </h1>
+            <p class="subheadline" style="text-align: center;">Você foi enganado: o problema não é o que você tem, mas o que seu corpo bloqueou. Não é genética. Não é idade. É compressão estrutural, causada por estresse, hábitos e alimentação.</p>
+            <div class="stats-row">
+                <div class="stat-box"><div class="stat-number">50K+</div><div class="stat-label">Homens</div></div>
+                <div class="stat-box"><div class="stat-number">4.9★</div><div class="stat-label">Avaliação</div></div>
+                <div class="stat-box"><div class="stat-number">94%</div><div class="stat-label">Aprovam</div></div>
+            </div>
+            <div class="privacy-note">🔒 TOTALMENTE CONFIDENCIAL - Suas respostas são 100% anônimas</div>
+            <div class="urgency-box">🔥 1.247 homens fizeram este teste nas últimas 24 horas</div>
+            <button class="btn" onclick="startQuiz()">⚡ REVELAR MEU POTENCIAL</button>
+        </div>
+    </div>
+
+    <!-- TELA 2: QUIZ -->
+    <div id="screen-2" class="screen">
+        <div class="card">
+            <div class="badge">🔒 100% CONFIDENCIAL</div>
+            <div class="progress-bar-container">
+                <div class="progress-text" id="progress-text">13% COMPLETO</div>
+                <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            </div>
+            <div id="quiz-content"></div>
+        </div>
+    </div>
+
+    <!-- TELA 3: TAMANHO ATUAL -->
+    <div id="screen-3" class="screen">
+        <div class="card">
+            <div class="badge">📏 MEDIÇÃO PERSONALIZADA</div>
+            <h2 class="headline" style="text-align: center;">Qual o tamanho atual do seu cajado ERETO?</h2>
+            <p style="text-align: center; color: #999; font-size: 14px; margin-bottom: 25px;">Seja honesto para calcularmos seu potencial REAL de crescimento</p>
+            <div class="cm-input-box">
+                <div style="font-size: 16px; font-weight: 900; color: var(--green); margin-bottom: 10px;">SEU TAMANHO ATUAL (ERETO)</div>
+                <input type="number" id="current-size" class="cm-input" placeholder="15" min="5" max="30" step="0.5">
+                <div class="cm-label">centímetros</div>
+            </div>
+            <div class="privacy-note">🔒 Essas informações são 100% confidenciais e usadas apenas para calcular seu resultado</div>
+            <button class="btn" onclick="calculateResult()">📊 CALCULAR MEU POTENCIAL</button>
+        </div>
+    </div>
+
+    <!-- TELA 4: ANÁLISE + DEPOIMENTOS -->
+    <div id="screen-4" class="screen">
+        <div class="card">
+            <div class="badge">🔬 ANÁLISE CIENTÍFICA</div>
+            <div class="analysis-header">
+                <div class="analysis-icon">🧬</div>
+                <h2 class="headline" style="margin: 0;">Processando Seus Dados...</h2>
+                <p style="color: #999; font-size: 13px; margin-top: 8px;">Analisando compatibilidade com o protocolo</p>
+            </div>
+            <div class="analysis-bar">
+                <div class="analysis-label">
+                    <span>🩸 Fluxo Sanguíneo Cavernoso</span>
+                    <span id="status-1" style="color: var(--primary);">⏳ Analisando</span>
+                </div>
+                <div class="bar-container"><div class="bar-fill" id="bar-1"></div></div>
+            </div>
+            <div class="analysis-bar">
+                <div class="analysis-label">
+                    <span>💪 Densidade Tecidual</span>
+                    <span id="status-2" style="color: #666;">⏳ Aguardando</span>
+                </div>
+                <div class="bar-container"><div class="bar-fill" id="bar-2"></div></div>
+            </div>
+            <div class="analysis-bar">
+                <div class="analysis-label">
+                    <span>🎯 Compatibilidade Protocolo</span>
+                    <span id="status-3" style="color: #666;">⏳ Aguardando</span>
+                </div>
+                <div class="bar-container"><div class="bar-fill" id="bar-3"></div></div>
+            </div>
+            <div class="testimonials-analysis-carousel">
+                <div class="testimonials-track" id="testimonials-track">
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">GM</div><div class="testimonial-info"><div class="testimonial-name">Gabriel Mota</div><div class="testimonial-age">22 anos • São Paulo</div></div></div><div class="testimonial-text">"Comecei novo e já queria melhorar. Em 5 semanas cresci 3cm e minha confiança foi lá pra cima. Recomendo pra qualquer idade!"</div><div class="testimonial-result">✓ RESULTADO: +3cm em 21 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">RC</div><div class="testimonial-info"><div class="testimonial-name">Ricardo Costa</div><div class="testimonial-age">42 anos • São Paulo</div></div></div><div class="testimonial-text">"Aos 42 achei que era tarde demais. Em menos de um mês ganhei 4cm e a firmeza voltou! Minha esposa notou logo na primeira semana."</div><div class="testimonial-result">✓ RESULTADO: +4cm em 28 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">LO</div><div class="testimonial-info"><div class="testimonial-name">Lucas Oliveira</div><div class="testimonial-age">25 anos • Curitiba</div></div></div><div class="testimonial-text">"Tinha vergonha na academia e na cama. Cresci 3,5cm em menos de 30 dias e agora tenho outra postura. Método incrível!"</div><div class="testimonial-result">✓ RESULTADO: +3.5cm em 25 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">MS</div><div class="testimonial-info"><div class="testimonial-name">Marcelo Silva</div><div class="testimonial-age">38 anos • Rio de Janeiro</div></div></div><div class="testimonial-text">"Depois dos 35 começou a diminuir. Esse método me devolveu não só o tamanho, mas a confiança. Cresci 4cm em menos de um mês!"</div><div class="testimonial-result">✓ RESULTADO: +4cm em 30 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">VR</div><div class="testimonial-info"><div class="testimonial-name">Vinícius Rocha</div><div class="testimonial-age">19 anos • Fortaleza</div></div></div><div class="testimonial-text">"Achei que jovem não precisava, mas queria ir além. Cresci 3cm e minha resistência dobrou. Resultado em menos de 3 semanas!"</div><div class="testimonial-result">✓ RESULTADO: +3cm em 18 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">AF</div><div class="testimonial-info"><div class="testimonial-name">André Ferreira</div><div class="testimonial-age">47 anos • Minas Gerais</div></div></div><div class="testimonial-text">"Com quase 50 anos, funcionou! Tinha 14cm, hoje tenho 17cm. Melhor: zero remédios, 100% natural. Resultado dentro do mês!"</div><div class="testimonial-result">✓ RESULTADO: +3cm em 27 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">TN</div><div class="testimonial-info"><div class="testimonial-name">Thiago Nunes</div><div class="testimonial-age">27 anos • Porto Alegre</div></div></div><div class="testimonial-text">"Minha namorada já reclamava do tempo. Com o método cresci 3,5cm e duro 3x mais. Ela notou a diferença logo na segunda semana!"</div><div class="testimonial-result">✓ RESULTADO: +3.5cm em 22 dias</div></div>
+                    <div class="testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">PS</div><div class="testimonial-info"><div class="testimonial-name">Paulo Santos</div><div class="testimonial-age">44 anos • Bahia</div></div></div><div class="testimonial-text">"Queria recuperar a confiança. Cresci 4cm e agora controlo quando quero. Resultado em menos de um mês, sem remédio nenhum!"</div><div class="testimonial-result">✓ RESULTADO: +4cm em 29 dias</div></div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(1)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(2)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(3)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(4)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(5)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(6)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(7)"></button>
+                </div>
+            </div>
+            <div id="result-container" style="display:none;">
+                <div class="result-box">
+                    <div class="result-label">🎉 SEU RESULTADO PERSONALIZADO:</div>
+                    <div class="result-number" id="final-size">18cm</div>
+                    <div class="result-label">Tamanho que você pode atingir</div>
+                </div>
+                <div class="result-detail">
+                    <div class="result-row"><div class="result-row-label">Tamanho Atual:</div><div class="result-row-value" id="current-size-display">15cm</div></div>
+                    <div class="result-row"><div class="result-row-label">Crescimento Potencial:</div><div class="result-row-value" id="growth-display">+3cm</div></div>
+                    <div class="result-row"><div class="result-row-label">Novo Tamanho:</div><div class="result-row-value" id="new-size-display" style="font-size: 28px;">18cm</div></div>
+                </div>
+                <p style="text-align: center; color: #ccc; font-size: 14px; margin-bottom: 20px;">
+                    Baseado no seu perfil, você tem <strong style="color: var(--green);">ALTA compatibilidade</strong> com o método!
+                </p>
+                <button class="btn" onclick="goToOffer()">🚀 QUERO ALCANÇAR ESSE TAMANHO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA 5: OFERTA -->
+    <div id="screen-5" class="screen">
+        <div class="card">
+            <div class="plan-header">
+                <div class="plan-tag">🏆 Acesso Completo ao Método</div>
+                <div class="plan-name">Plano Premium</div>
+                <div class="plan-sub">Protocolo Completo + Acesso Premium</div>
+            </div>
+            <div style="margin-bottom: 25px;">
+                <div class="benefit"><span>✓</span> Método de excelência: do básico ao avançado</div>
+                <div class="benefit"><span>✓</span> Manuais exclusivos (iniciante e avançado)</div>
+                <div class="benefit"><span>✓</span> Vídeo Aulas detalhadas para aplicação imediata</div>
+                <div class="benefit"><span>✓</span> Foco em crescimento, espessura e performance</div>
+                <div class="benefit"><span>✓</span> Suporte 24h + Comunidade VIP</div>
+                <div class="benefit"><span>🎁</span> Bônus Especial: Guia da Atração</div>
+                <div class="benefit"><span>♾️</span> Acesso Vitalício (sem mensalidades)</div>
+            </div>
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-title">Garantia de 7 Dias — Risco Zero</div>
+                <div class="guarantee-desc">Não ficou satisfeito? Devolvemos 100% do seu dinheiro.<br>Sem perguntas, sem burocracia.</div>
+            </div>
+            <button class="btn" onclick="checkout()" style="font-size: 19px; padding: 22px; margin-bottom: 15px;">🔒 GARANTIR MEU ACESSO AGORA</button>
+            <div class="testimonials-carousel" id="testimonials">
+                <div class="testimonial-slide active"><div class="testimonial-quote">💬 "Aumentei 3cm em 6 semanas. Melhor investimento!"</div><div class="testimonial-author">@marcos_sp, 27 anos</div></div>
+                <div class="testimonial-slide"><div class="testimonial-quote">💬 "Minha namorada percebeu a diferença nas primeiras semanas 🔥"</div><div class="testimonial-author">@carlos_rj, 31 anos</div></div>
+                <div class="testimonial-slide"><div class="testimonial-quote">💬 "Tinha 13cm, hoje tenho 16cm. Mudou minha vida!"</div><div class="testimonial-author">@pedro_mg, 25 anos</div></div>
+                <div class="testimonial-slide"><div class="testimonial-quote">💬 "Agora duro quanto EU quero. Controle total!"</div><div class="testimonial-author">@lucas_ba, 29 anos</div></div>
+            </div>
+            <div class="security-footer">🔒 Pagamento 100% seguro e discreto</div>
+        </div>
+    </div>
+
+  </div><!-- /container -->
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -420,64 +355,21 @@
         }
         const currentChannel = detectChannel();
 
-        // ─────────────────────────────────────────────────────────────────
-        // MAPA DE FAIXAS ETÁRIAS → número inteiro para o dashboard
-        // ─────────────────────────────────────────────────────────────────
         const AGE_OPTION_MAP = {
-            'Entre 19 e 27 anos': 23,   // ponto médio da faixa
+            'Entre 19 e 27 anos': 23,
             'Entre 28 e 36 anos': 32,
             'Mais de 36 anos':    42
         };
 
         const QUESTIONS = [
-            {
-                id: 'tamanho',
-                q: '📏 Qual é o tamanho aproximado do seu cajado ereto?',
-                o: ['Menos de 12 cm', 'De 12 a 14 cm', 'De 14 a 16 cm', 'Mais de 16 cm'],
-                points: [10, 8, 5, 3]
-            },
-            {
-                id: 'masturbacao',
-                q: '🔥 Com que frequência você "se masturba"?',
-                o: ['Mais de uma vez por dia', 'Todos os dias', 'De 2 a 4 vezes por semana', 'Raramente'],
-                points: [4, 6, 9, 10]
-            },
-            {
-                id: 'erecao_matinal',
-                q: '🌅 Você costuma acordar com o cajado ereto?',
-                o: ['Quase nunca', 'Raramente', 'Às vezes', 'Quase sempre'],
-                points: [10, 8, 6, 3]
-            },
-            {
-                id: 'metodo_natural',
-                q: '🌿 Você já tentou algum método natural para aumentar o cajado?',
-                o: ['Nunca ouvi falar', 'Já ouvi falar, mas nunca tentei', 'Já tentei, mas sem constância', 'Sim, fiz com disciplina'],
-                points: [10, 8, 6, 4]
-            },
-            {
-                id: 'dieta',
-                q: '🍽️ Como é sua dieta diária?',
-                o: ['Apenas comida processada (refrigerantes, fast food, doces)', '50% comida processada, 50% saudável', 'Tento comer bem na maioria das refeições', 'Dieta natural e equilibrada'],
-                points: [10, 7, 4, 2]
-            },
-            {
-                id: 'sono',
-                q: '😴 Quantas horas você dorme por noite?',
-                o: ['Menos de 5 horas', 'De 5 a 6 horas', 'De 6 a 7 horas', '8 horas ou mais'],
-                points: [10, 7, 5, 3]
-            },
-            {
-                id: 'exercicio',
-                q: '💪 Você pratica atividade física?',
-                o: ['Nunca', 'Uma vez por semana ou menos', 'De 2 a 3 vezes por semana', '4 vezes por semana ou mais'],
-                points: [10, 7, 4, 2]
-            },
-            {
-                id: 'idade',
-                q: '📅 Qual é a sua idade?',
-                o: ['Entre 19 e 27 anos', 'Entre 28 e 36 anos', 'Mais de 36 anos'],
-                points: [8, 7, 6]
-            }
+            { id: 'tamanho', q: '📏 Qual é o tamanho aproximado do seu cajado ereto?', o: ['Menos de 12 cm', 'De 12 a 14 cm', 'De 14 a 16 cm', 'Mais de 16 cm'], points: [10, 8, 5, 3] },
+            { id: 'masturbacao', q: '🔥 Com que frequência você "se masturba"?', o: ['Mais de uma vez por dia', 'Todos os dias', 'De 2 a 4 vezes por semana', 'Raramente'], points: [4, 6, 9, 10] },
+            { id: 'erecao_matinal', q: '🌅 Você costuma acordar com o cajado ereto?', o: ['Quase nunca', 'Raramente', 'Às vezes', 'Quase sempre'], points: [10, 8, 6, 3] },
+            { id: 'metodo_natural', q: '🌿 Você já tentou algum método natural para aumentar o cajado?', o: ['Nunca ouvi falar', 'Já ouvi falar, mas nunca tentei', 'Já tentei, mas sem constância', 'Sim, fiz com disciplina'], points: [10, 8, 6, 4] },
+            { id: 'dieta', q: '🍽️ Como é sua dieta diária?', o: ['Apenas comida processada (refrigerantes, fast food, doces)', '50% comida processada, 50% saudável', 'Tento comer bem na maioria das refeições', 'Dieta natural e equilibrada'], points: [10, 7, 4, 2] },
+            { id: 'sono', q: '😴 Quantas horas você dorme por noite?', o: ['Menos de 5 horas', 'De 5 a 6 horas', 'De 6 a 7 horas', '8 horas ou mais'], points: [10, 7, 5, 3] },
+            { id: 'exercicio', q: '💪 Você pratica atividade física?', o: ['Nunca', 'Uma vez por semana ou menos', 'De 2 a 3 vezes por semana', '4 vezes por semana ou mais'], points: [10, 7, 4, 2] },
+            { id: 'idade', q: '📅 Qual é a sua idade?', o: ['Entre 19 e 27 anos', 'Entre 28 e 36 anos', 'Mais de 36 anos'], points: [8, 7, 6] }
         ];
 
         let currentQ = 0;
@@ -486,12 +378,70 @@
         let currentSize = 0;
         let growthPotential = 0;
         let finalSize = 0;
-
-        // Carrossel tela 4
         let currentSlide = 0;
         let carouselInterval = null;
         const totalSlides = 8;
 
+        // ── Detectar se está dentro do TikTok/app ────────────
+        function isInAppBrowser() {
+            const ua = navigator.userAgent || '';
+            return /TikTok|BytedanceWebview|musical_ly|Instagram|FBAN|FBAV|Twitter|Line|KAKAOTALK|Snapchat/i.test(ua);
+        }
+
+        // ── NOVA FUNÇÃO: salvar escolha do navegador no Firestore ──
+        async function saveBrowserChoice(choice) {
+            // choice: 'browser' = abriu no navegador | 'tiktok' = ficou no app
+            try {
+                await setDoc(doc(db, 'sessions', sid), {
+                    browserChoice: choice,
+                    browserChoiceAt: serverTimestamp(),
+                    lastActivity: serverTimestamp()
+                }, { merge: true });
+            } catch (err) {}
+        }
+
+        // Pular tela 0 — ficou no TikTok
+        window.skipToFunil = function() {
+            saveBrowserChoice('tiktok');   // ← REGISTRA que ficou no TikTok
+            showScreen(1);
+        };
+
+        // Countdown 10 minutos
+        function startCountdown(seconds) {
+            const el = document.getElementById('countdown-timer');
+            if (!el) return;
+            let remaining = seconds;
+            const tick = setInterval(() => {
+                remaining--;
+                if (remaining <= 0) {
+                    clearInterval(tick);
+                    if (el) el.textContent = 'EXPIRADO';
+                    return;
+                }
+                const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+                const s = (remaining % 60).toString().padStart(2, '0');
+                if (el) el.textContent = m + ':' + s;
+            }, 1000);
+        }
+
+        // ── INICIALIZAÇÃO ───────────────────────
+        if (isInAppBrowser()) {
+            showScreen(0);
+            startCountdown(600);
+            // Registra que a pessoa VIU a tela de instrução (ainda dentro do app)
+            // A escolha final (browser ou tiktok) só é salva quando clicar
+        } else {
+            // Chegou pelo navegador — veio da tela 0 ou entrou direto
+            // Só marca 'browser' se tinha passado pela tela 0 antes
+            const prevChoice = localStorage.getItem('browser_choice_saved');
+            if (!prevChoice) {
+                saveBrowserChoice('browser');   // ← REGISTRA que abriu no navegador
+                localStorage.setItem('browser_choice_saved', '1');
+            }
+            showScreen(1);
+        }
+
+        // Carrossel tela 4
         window.goToSlide = function(index) {
             currentSlide = index;
             document.getElementById('testimonials-track').style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -558,33 +508,12 @@
 
         window.selectAnswer = function(optionIndex, answer) {
             const q = QUESTIONS[currentQ];
-
-            // ── Salva resposta no objeto local ──────────────────────────
             answers[q.id] = answer;
             totalPoints += q.points[optionIndex];
-
-            // ── FIX: Se for a pergunta de idade, extrai o número ────────
-            if (q.id === 'idade') {
-                answers.idade = AGE_OPTION_MAP[answer] || 36;
-            }
-
+            if (q.id === 'idade') { answers.idade = AGE_OPTION_MAP[answer] || 36; }
             const progress = currentQ + 1;
-
-            // ── FIX: Grava answers consolidado + campo idade direto ──────
-            track('quiz_answer', {
-                question: q.id,
-                answer,
-                quizProgress: progress,
-                answers: { ...answers },          // objeto completo atualizado
-                ...(q.id === 'idade' && { idade: answers.idade }) // campo direto para o dashboard
-            });
-
-            setDoc(doc(db, 'sessions', sid), {
-                quizProgress: progress,
-                answers: { ...answers },
-                lastActivity: serverTimestamp()
-            }, { merge: true });
-
+            track('quiz_answer', { question: q.id, answer, quizProgress: progress, answers: { ...answers }, ...(q.id === 'idade' && { idade: answers.idade }) });
+            setDoc(doc(db, 'sessions', sid), { quizProgress: progress, answers: { ...answers }, lastActivity: serverTimestamp() }, { merge: true });
             currentQ++;
             if (currentQ < QUESTIONS.length) {
                 renderQuestion();
@@ -597,10 +526,7 @@
         window.calculateResult = function() {
             const input = document.getElementById('current-size').value;
             currentSize = parseFloat(input);
-            if (!currentSize || currentSize < 5 || currentSize > 30) {
-                alert('Por favor, insira um valor válido entre 5 e 30 cm');
-                return;
-            }
+            if (!currentSize || currentSize < 5 || currentSize > 30) { alert('Por favor, insira um valor válido entre 5 e 30 cm'); return; }
             let growthRange;
             if (totalPoints >= 65)      growthRange = [5, 7];
             else if (totalPoints >= 50) growthRange = [4, 6];
@@ -609,24 +535,8 @@
             else                        growthRange = [2, 3];
             growthPotential = growthRange[1];
             finalSize = currentSize + growthPotential;
-
-            // ── FIX: Grava tamanho atual e potencial diretamente na sessão ──
-            track('size_input', {
-                currentSize,
-                growthPotential,
-                finalSize,
-                score: totalPoints,
-                answers: { ...answers, tamanho_atual_cm: currentSize }
-            });
-
-            setDoc(doc(db, 'sessions', sid), {
-                currentSize,
-                growthPotential,
-                finalSize,
-                answers: { ...answers, tamanho_atual_cm: currentSize },
-                lastActivity: serverTimestamp()
-            }, { merge: true });
-
+            track('size_input', { currentSize, growthPotential, finalSize, score: totalPoints, answers: { ...answers, tamanho_atual_cm: currentSize } });
+            setDoc(doc(db, 'sessions', sid), { currentSize, growthPotential, finalSize, answers: { ...answers, tamanho_atual_cm: currentSize }, lastActivity: serverTimestamp() }, { merge: true });
             showScreen(4);
             startAnalysis();
             startAnalysisCarousel();
@@ -638,18 +548,10 @@
                 step++;
                 if (step <= 3) {
                     document.getElementById('bar-1').style.width = ((step / 3) * 100) + '%';
-                    if (step === 3) {
-                        document.getElementById('bar-1').classList.add('complete');
-                        document.getElementById('status-1').innerHTML = '<span style="color: var(--green);">✅ Excelente</span>';
-                        document.getElementById('status-2').innerHTML = '<span style="color: var(--primary);">⏳ Analisando</span>';
-                    }
+                    if (step === 3) { document.getElementById('bar-1').classList.add('complete'); document.getElementById('status-1').innerHTML = '<span style="color: var(--green);">✅ Excelente</span>'; document.getElementById('status-2').innerHTML = '<span style="color: var(--primary);">⏳ Analisando</span>'; }
                 } else if (step <= 6) {
                     document.getElementById('bar-2').style.width = (((step - 3) / 3) * 100) + '%';
-                    if (step === 6) {
-                        document.getElementById('bar-2').classList.add('complete');
-                        document.getElementById('status-2').innerHTML = '<span style="color: var(--green);">✅ Ótimo</span>';
-                        document.getElementById('status-3').innerHTML = '<span style="color: var(--primary);">⏳ Analisando</span>';
-                    }
+                    if (step === 6) { document.getElementById('bar-2').classList.add('complete'); document.getElementById('status-2').innerHTML = '<span style="color: var(--green);">✅ Ótimo</span>'; document.getElementById('status-3').innerHTML = '<span style="color: var(--primary);">⏳ Analisando</span>'; }
                 } else if (step <= 8) {
                     document.getElementById('bar-3').style.width = (((step - 6) / 2) * 100) + '%';
                     if (step === 8) {
@@ -688,8 +590,6 @@
 
         window.checkout = function() {
             const ch = localStorage.getItem('tiktok_channel') || sessionStorage.getItem('tiktok_channel') || currentChannel;
-
-            // ── FIX: Grava canal explícito no checkout ──────────────────
             setDoc(doc(db, 'sessions', sid), {
                 'events.checkout': serverTimestamp(),
                 currentStep: 'checkout',
@@ -699,7 +599,6 @@
                 source: ch,
                 lastActivity: serverTimestamp()
             }, { merge: true });
-
             setTimeout(() => {
                 window.location.href = `https://pay.wiapy.com/elbyXqblP2?utm_source=${sid}&external_id=${sid}`;
             }, 400);
