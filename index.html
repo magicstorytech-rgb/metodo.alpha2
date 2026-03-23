@@ -92,6 +92,26 @@
         .tela0-skip:hover { color: #888; }
         .countdown-box { background: rgba(239,68,68,0.15); border: 1px solid var(--primary); padding: 14px; border-radius: 10px; text-align: center; margin-bottom: 20px; font-size: 13px; font-weight: 700; color: var(--primary); }
         .countdown-time { font-size: 28px; font-weight: 900; display: block; margin-top: 4px; letter-spacing: 2px; }
+        
+        /* Animação para seta - mais intensa e chamativa */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { 
+                transform: translateY(0) scale(1); 
+            }
+            40% { 
+                transform: translateY(-12px) scale(1.2); 
+            }
+            60% { 
+                transform: translateY(-6px) scale(1.1); 
+            }
+        }
+        
+        /* Animação de brilho para os benefícios */
+        @keyframes shine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -101,11 +121,18 @@
     <div id="screen-0" class="screen">
         <div class="card" style="text-align:center;">
 
-            <!-- Faixa topo -->
-            <div style="background: linear-gradient(90deg, #ef4444, #dc2626); border-radius: 10px; padding: 10px 16px; margin-bottom: 16px;">
-                <span style="font-size: 13px; font-weight: 900; color: #fff; letter-spacing: 0.5px;">
-                    🔥 OFERTA EXCLUSIVA · APENAS HOJE
-                </span>
+            <!-- Seta chamativa no canto superior direito -->
+            <div style="position: relative;">
+                <!-- Seta grande e chamativa -->
+                <div style="position: absolute; top: -20px; right: 2px; color: #22c55e; font-size: 32px; animation: bounce 1.2s infinite; z-index: 10; text-shadow: 0 0 10px rgba(34,197,94,0.8);">
+                    ↗️
+                </div>
+                <!-- Faixa topo -->
+                <div style="background: linear-gradient(90deg, #ef4444, #dc2626); border-radius: 10px; padding: 10px 16px; margin-bottom: 16px;">
+                    <span style="font-size: 13px; font-weight: 900; color: #fff; letter-spacing: 0.5px;">
+                        🔥 OFERTA EXCLUSIVA · APENAS HOJE
+                    </span>
+                </div>
             </div>
 
             <!-- Headline -->
@@ -117,16 +144,43 @@
                 <span style="font-size: 0.65em; color: #ccc; font-weight: 700;">reservado para você agora</span>
             </h1>
 
-            <!-- Instrução com imagem -->
-            <div style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.4); border-radius: 12px; padding: 14px; margin-bottom: 14px;">
-                <div style="font-size: 14px; font-weight: 900; color: #fff; margin-bottom: 10px;">
+            <!-- Instruções visuais sem imagem -->
+            <div style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.4); border-radius: 12px; padding: 16px; margin-bottom: 14px;">
+                <div style="font-size: 14px; font-weight: 900; color: #fff; margin-bottom: 18px; text-align: center;">
                     📲 Siga os passos para garantir o desconto:
                 </div>
-                <img
-                    src="https://i.im.ge/2026/02/06/e0jl7p.WhatsApp-Image-2026-02-02-at-09-17-58-2-1-2.jpeg"
-                    alt="Como abrir no navegador"
-                    style="width:100%; max-width:360px; border-radius:10px; display:block; margin: 0 auto;"
-                />
+                
+                <!-- Passo 1 -->
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid #22c55e; border-radius: 10px; padding: 14px; margin-bottom: 12px;">
+                    <div style="font-size: 13px; font-weight: 800; color: #22c55e; margin-bottom: 8px;">
+                        <span style="background: #22c55e; color: #000; padding: 2px 8px; border-radius: 50%; margin-right: 8px; font-size: 11px;">1</span>
+                        Toque nos 3 pontos (⋯) que ficam bem no cantinho superior direito
+                    </div>
+                </div>
+
+                <!-- Passo 2 -->
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid #22c55e; border-radius: 10px; padding: 14px; margin-bottom: 12px;">
+                    <div style="font-size: 13px; font-weight: 800; color: #22c55e;">
+                        <span style="background: #22c55e; color: #000; padding: 2px 8px; border-radius: 50%; margin-right: 8px; font-size: 11px;">2</span>
+                        Toque em "Abrir no navegador" 
+                    </div>
+                </div>
+
+                <!-- Benefícios premium com efeito especial -->
+                <div style="background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(34,197,94,0.05)); border: 2px solid #22c55e; border-radius: 12px; padding: 16px; margin-top: 12px; box-shadow: 0 8px 20px rgba(34,197,94,0.3), inset 0 1px 3px rgba(34,197,94,0.1); position: relative; overflow: hidden;">
+                    <!-- Efeito de brilho -->
+                    <div style="position: absolute; top: -2px; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: shine 2s infinite;"></div>
+                    
+                    <div style="font-size: 11px; color: #22c55e; font-weight: 900; text-align: center; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">
+                        🔒 ACESSO TOTALMENTE SIGILOSO
+                    </div>
+                    
+                    <div style="font-size: 12px; color: #22c55e; font-weight: 700; text-align: center; line-height: 1.4;">
+                        ✅ Receba 40% de desconto exclusivo<br>
+                        ✅ Acesso ao teste totalmente validado e efetivo<br>
+                        ✅ Método 100% discreto e confidencial
+                    </div>
+                </div>
             </div>
 
             <!-- Countdown -->
